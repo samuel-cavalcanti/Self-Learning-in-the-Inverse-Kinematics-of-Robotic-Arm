@@ -1,0 +1,102 @@
+[  5%] Building CXX object CMakeFiles/cppremoteapi.dir/main.cpp.o
+[ 11%] Building C object CMakeFiles/cppremoteapi.dir/remoteApi/extApi.c.o
+[ 16%] Building C object CMakeFiles/cppremoteapi.dir/remoteApi/extApiPlatform.c.o
+[ 22%] Building CXX object CMakeFiles/cppremoteapi.dir/SOM/SOM.cpp.o
+[ 27%] Building CXX object CMakeFiles/cppremoteapi.dir/SOM/SOM3D.cpp.o
+[ 33%] Building CXX object CMakeFiles/cppremoteapi.dir/SOM/Node.cpp.o
+[ 38%] Building CXX object CMakeFiles/cppremoteapi.dir/SOM/Test.cpp.o
+[ 44%] Building CXX object CMakeFiles/cppremoteapi.dir/SOM/Sample.cpp.o
+[ 50%] Building CXX object CMakeFiles/cppremoteapi.dir/SOM/DataSet.cpp.o
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp: In member function ‘void DataSet::normalizeData()’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:135:20: warning: unused variable ‘positiveInfinityValue’ [-Wunused-variable]
+             double positiveInfinityValue = std::numeric_limits<double>::max();
+                    ^~~~~~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:136:20: warning: unused variable ‘negativeInfinityValue’ [-Wunused-variable]
+             double negativeInfinityValue = std::numeric_limits<double>::min();
+                    ^~~~~~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp: In member function ‘void DataSet::saveToFile(std::__cxx11::string, bool, bool)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:211:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if (empty)
+     ^~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:213:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+         std::ofstream file(fileName.c_str());
+         ^~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp: In member function ‘void DataSet::saveToFileOctaveFormat(std::__cxx11::string, unsigned int)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:243:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if (rows == 0)
+     ^~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:246:13: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+             file << "# name: data " << std::endl;
+             ^~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:254:13: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+             if (i == matrix.size())
+             ^~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:256:21: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+                     s = getSample(i);
+                     ^
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp: In member function ‘void DataSet::show()’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:273:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if (empty)
+     ^~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SOM/DataSet.cpp:276:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+         Sample s(0);
+         ^~~~~~
+[ 55%] Building CXX object CMakeFiles/cppremoteapi.dir/VDC/VDC.cpp.o
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp: In member function ‘cv::Mat VDC::convertVrepToOpenCV(simxUChar*, simxInt, simxInt)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:119:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (unsigned int i = 0; i < resY; i++) {
+                              ~~^~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:120:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (unsigned int j = 0; j < resX; j++) {
+                                  ~~^~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp: In member function ‘bool VDC::opencvVisionInfo(int, double&, double&)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:232:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < contours.size(); i++) {
+                         ~~^~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:236:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < contours.size(); i++) {
+                         ~~^~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:242:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < contours.size(); i++) {
+                         ~~^~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:257:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < contours.size(); i++) {
+                         ~~^~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/VDC/VDC.cpp:263:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < contours.size(); i++) {
+                         ~~^~~~~~~~~~~~~~~~~
+[ 61%] Building CXX object CMakeFiles/cppremoteapi.dir/include/extras.cpp.o
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/include/extras.cpp: In member function ‘void Extras::checkAndAddTypeCSV(std::__cxx11::string)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/include/extras.cpp:228:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i=0; i< typeFile.size(); i++){
+                  ~^~~~~~~~~~~~~~~~~
+[ 66%] Building CXX object CMakeFiles/cppremoteapi.dir/AuraArmVrep/AuraArmVrep.cpp.o
+[ 72%] Building CXX object CMakeFiles/cppremoteapi.dir/SomTSP/BasicNeuralNetwork.cpp.o
+[ 77%] Building CXX object CMakeFiles/cppremoteapi.dir/SomTSP/NodoTsp.cpp.o
+[ 83%] Building CXX object CMakeFiles/cppremoteapi.dir/SomTSP/SomTsp.cpp.o
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/SomTsp.cpp: In member function ‘void SomTsp::deleteNeurons()’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/SomTsp.cpp:84:14: warning: unused variable ‘firstNeighbor’ [-Wunused-variable]
+     NodoTsp* firstNeighbor;
+              ^~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/SomTsp.cpp:85:14: warning: unused variable ‘secondNeighbor’ [-Wunused-variable]
+     NodoTsp* secondNeighbor;
+              ^~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/SomTsp.cpp: In member function ‘virtual void SomTsp::executeOneIt()’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/SomTsp.cpp:149:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ((nodos->size() < maxSize) and (wins == 2) ) {
+              ~~~~~~~~~~~~~~^~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/SomTsp.cpp:146:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+     if (bestN->isEnabled())
+        ^
+[ 88%] Building CXX object CMakeFiles/cppremoteapi.dir/SomTSP/Nodo.cpp.o
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/Nodo.cpp: In member function ‘double Nodo::getFeature(int)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/Nodo.cpp:84:12: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( i < information.size() )
+          ~~^~~~~~~~~~~~~~~~~~~~
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/Nodo.cpp: In member function ‘void Nodo::setFeature(double, int)’:
+/home/samuel/Documentos/Repositories/braco_robotico/V-rep/remoteAPI_AURA_ARM/SomTSP/Nodo.cpp:94:12: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( i < information.size() )
+          ~~^~~~~~~~~~~~~~~~~~~~
+[ 94%] Building CXX object CMakeFiles/cppremoteapi.dir/SomTSP/Weight.cpp.o
+[100%] Linking CXX executable cppremoteapi
+[100%] Built target cppremoteapi
