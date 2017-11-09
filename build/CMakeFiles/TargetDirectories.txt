@@ -1,7 +1,0 @@
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/install/strip.dir
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/edit_cache.dir
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/cppremoteapi.dir
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/rebuild_cache.dir
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/list_install_components.dir
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/install/local.dir
-/home/samuel/Documentos/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/build/CMakeFiles/install.dir
