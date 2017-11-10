@@ -33,11 +33,17 @@
             </df>
             <df name="Vdc">
             </df>
+            <df name="VrepToOpencv">
+            </df>
           </df>
           <in>feature_tests.c</in>
           <in>feature_tests.cxx</in>
         </df>
         <df name="Coleta">
+        </df>
+        <df name="output">
+          <df name="ArmInLineSize36">
+          </df>
         </df>
         <df name="outputs">
           <df name="amostrasFinaisSize18">
@@ -89,6 +95,10 @@
       <df name="Vdc">
         <in>Vdc.cpp</in>
         <in>Vdc.h</in>
+      </df>
+      <df name="VrepToOpencv">
+        <in>VrepToOpencv.cpp</in>
+        <in>VrepToOpencv.h</in>
       </df>
       <in>main.cpp</in>
     </df>

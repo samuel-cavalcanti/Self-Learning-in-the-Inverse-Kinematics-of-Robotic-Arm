@@ -37,6 +37,9 @@
       <df name="Vdc">
         <in>Vdc.cpp</in>
       </df>
+      <df name="VrepToOpencv">
+        <in>VrepToOpencv.cpp</in>
+      </df>
       <in>main.cpp</in>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -96,6 +99,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -115,6 +119,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -134,6 +139,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -157,6 +163,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -176,6 +183,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -187,6 +195,10 @@
         </ccTool>
       </item>
       <item path="Vdc/Vdc.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="VrepToOpencv/VrepToOpencv.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
@@ -220,6 +232,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -239,6 +252,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -258,6 +272,27 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
+            <pElem>/usr/include/opencv</pElem>
+            <pElem>build</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BUILD_SHARED_LIBS=OFF</Elem>
+            <Elem>MAX_EXT_API_CONNECTIONS=255</Elem>
+            <Elem>NON_MATLAB_PARSING</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/VrepToOpencv">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>remoteApi</pElem>
+            <pElem>Vdc</pElem>
+            <pElem>SOM</pElem>
+            <pElem>AuraArmVrep</pElem>
+            <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -277,6 +312,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>
@@ -295,6 +331,7 @@
             <pElem>SOM</pElem>
             <pElem>AuraArmVrep</pElem>
             <pElem>Extras</pElem>
+            <pElem>VrepToOpencv</pElem>
             <pElem>/usr/include/opencv</pElem>
             <pElem>build</pElem>
           </incDir>

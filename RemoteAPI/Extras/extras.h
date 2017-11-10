@@ -11,15 +11,8 @@ class Extras {
     
 public:
     double pi();
-    double degree(double Degree);
-    double radians(double radians);
-    float ramdomValor();
-    void randomInLine(double &beta, double &gama);
-    void randomInPlane(double &beta, double &gama);
-    void ramdomInPlane2(double &beta, double &gama);
-    void ramdomInPlane3(double &beta, double &gama);
-    void ramdomInPlane4(double &beta, double &gama);
-    void ramdomInPlane5(double &alfa, double &beta, double &gama);
+    double ToDegree(double Degree);
+    double ToRadians(double radians);
     void log(double beta, double gama, double relativeX, double relativeY, std::string filename);
     void logCsv_old(double beta, double gama, double relativeX, double relativeY);
     void logCsv(std::string data, std::string filename , std::string header);

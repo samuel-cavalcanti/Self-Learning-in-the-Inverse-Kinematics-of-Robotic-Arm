@@ -24,6 +24,7 @@ set(SOURCES
     Vdc/Vdc.cpp
     AuraArmVrep/AuraArmVrep.cpp
     Extras/extras.cpp
+    VrepToOpencv/VrepToOpencv.cpp
 )
 
 set(HEADERS
@@ -42,6 +43,7 @@ set(HEADERS
     Vdc/Vdc.h
     AuraArmVrep/AuraArmVrep.h
     Extras/extras.h
+    VrepToOpencv/VrepToOpencv.h
 )
 include_directories("include")
 include_directories("remoteApi")
@@ -49,6 +51,7 @@ include_directories("Vdc")
 include_directories("SOM")
 include_directories("AuraArmVrep")
 include_directories("Extras")
+include_directories("VrepToOpencv")
 
 find_package (Threads)
 find_package( OpenCV REQUIRED ) 

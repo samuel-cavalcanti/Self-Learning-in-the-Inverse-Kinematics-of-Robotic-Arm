@@ -11,13 +11,16 @@
 AuraArmVrep::AuraArmVrep(std::string serverIP, int serverPort) {
     Vrep = new Vdc(serverIP.c_str(), serverPort);
     start();
+    OpencvImage = new VrepToOpencv(Vrep->getClientID(), Webcam);
+    // OpencvImage->showImage("teste");
 }
 
 void AuraArmVrep::start() {
+    Vrep->conectpiece("Webcam", Webcam);
     Vrep->conectpiece("Joint#1", Joint[0]);
     Vrep->conectpiece("Joint#2", Joint[1]);
     Vrep->conectpiece("Joint#3", Joint[2]);
-    Vrep->conectpiece("Webcam", Webcam);
+
 }
 
 void AuraArmVrep::setJoints(double alpha, double beta, double gama) {
@@ -27,7 +30,7 @@ void AuraArmVrep::setJoints(double alpha, double beta, double gama) {
 
 }
 
-void AuraArmVrep::collectingData(int nSamples, std::string filename, bool threshold(double, double)) {
+void AuraArmVrep::collectingData(int nSamples, std::string filename, bool threshold(double, double), bool openCV) {
     double beta = 0;
     double gamma = 0;
     double relativeXCam = -1; // se ocorrer erro de leitor o seu valor continuará em -1
@@ -49,13 +52,15 @@ void AuraArmVrep::collectingData(int nSamples, std::string filename, bool thresh
         /***************************************************************
             Obtendo a posição da ponta do braço na câmera
          ***************************************************************/
-        getVisionInfo(Webcam, relativeXCam, relativeYCam);
+        getVisionData(relativeXCam, relativeYCam, openCV);
+
 
         // se a posição for uma possição valida 
         if (threshold(relativeXCam, relativeYCam)) {
             saveSample(filename.c_str(), beta, gamma, relativeXCam, relativeYCam);
             nSamples--;
         }
+
 
         // espera um pouco antes de reiniciar a leitura dos sensores
         Vrep->delay(1000);
@@ -87,26 +92,54 @@ void AuraArmVrep::randomAngle(double& beta, double& gamma) {
 
 }
 
-bool AuraArmVrep::getVisionInfo(int cam, double& rx, double& ry) {
+bool AuraArmVrep::getVisionData(double& rx, double& ry, bool openCV) {
+    if (openCV)
+        if (getVisionOpenCV(rx, ry))
+            return true;
+        else
+            return false;
+    else
+        if (getVisionVrep(Webcam, rx, ry))
+        return true;
+    else
+        return false;
+
+}
+
+bool AuraArmVrep::getVisionVrep(int cam, double& rx, double& ry) {
     std::vector<float> auxValues;
     int auxValuesCount;
-
 
     if (Vrep->simulationIsActive()) {
         //http://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadVisionSensor.htm
         if (Vrep->readVisionSensor(cam, auxValues, auxValuesCount)) {
+
+
+
+            if (auxValues[16] < 0.001 || auxValues[17] < 0.001)
+                return false;
+
             rx = auxValues[16];
             ry = auxValues[17];
 
+
+            // std::cout << "x: " << rx << " y: " << ry <<std::endl;
             return true;
 
         }
+
         return false;
 
     } // std::cout << "Simuation is off" << std::endl;
     return false;
 
+}
 
+bool AuraArmVrep::getVisionOpenCV(double& rx, double& ry) {
+    if (OpencvImage->findRedColorMass(rx, ry))
+        return true;
+
+    return false;
 }
 
 void AuraArmVrep::saveSample(std::string file, double beta, double gamma, double rx, double ry) {
@@ -120,40 +153,47 @@ void AuraArmVrep::saveSample(std::string file, double beta, double gamma, double
     save.logCsv(data.c_str(), file.c_str(), header.c_str());
 }
 
-void AuraArmVrep::VisualTest(std::string somOutputFile) {
+void AuraArmVrep::VisualTest(std::string somOutputFile, bool openCV) {
     // carregando a SOM
-    SOM som(somOutputFile.c_str());
+   
+    SOM som (36);
+    som.loadNodes(somOutputFile.c_str());
     std::vector<double> sample = {0, 0, 0, 0}; // amostra parcial: beta , gamma , rx ,ry;
 
     // enquando a simuação estiver acontecendo
     while (Vrep->simulationIsActive()) {
 
         // obetendo o valor rx,ry da bola
-        getVisionInfo(Webcam, sample[2], sample[3]);
+        getVisionData(sample[2], sample[3], openCV);
         //encontrando o neuronio vencedor e recuperando o dados de controle 
         som.findBest(sample, 2, 3);
-        
+
         // atribuindo ao braço os dados de controle da rede som 
-        setJoints(0,sample[0],sample[1]);
-        
+        setJoints(0, sample[0], sample[1]);
+
         Vrep->delay(500);
-        
+
     }
-    
+
 }
-void  AuraArmVrep::trainingSOM(int size, std::string samplesFile){
-    
+
+void AuraArmVrep::trainingSOM(int size, std::string samplesFile) {
+
     std::vector<std::string> results;
-    std::string filename; 
-    
-    boost::split(results, samplesFile, [](char c){return c == '/';});
-     
-    filename = results[ results.size() -1 ];
+    std::string filename;
+
+    boost::split(results, samplesFile, [](char c) {
+        return c == '/';
+    });
+
+    filename = results[ results.size() - 1 ];
     results.clear();
-    boost::split(results, filename, [](char c){return c == '.';});
+    boost::split(results, filename, [](char c) {
+        return c == '.';
+    });
     filename = results[0];
-    
-    
+
+
     //setando posiçoes de leitura e escrita
     std::string directory = "output/" + filename + "Size" + std::to_string(size) + "/";
     std::string dataFile = samplesFile;
@@ -167,7 +207,7 @@ void  AuraArmVrep::trainingSOM(int size, std::string samplesFile){
 
     DataSet *data = new DataSet(dataFile);
     data->show();
-    std::string outputFile = directory + filename + "_"  + "_Size" + std::to_string(size) + "_";
+    std::string outputFile = directory + filename + "_" + "_Size" + std::to_string(size) + "_";
     som.setDataSet(data);
 
     // std::cout <<  outputFile << std::endl;
@@ -190,7 +230,7 @@ void  AuraArmVrep::trainingSOM(int size, std::string samplesFile){
     while (i < iterations) {
         som.executeOneIt();
         i++;
-       // if (i % 1000 == 0)
+        if (i % 1000 == 0)
             som.saveNodes(outputFile, csvHeader.c_str(), false);
     }
     std::cout << "Iteractions executed: " << iterations << std::endl;
@@ -198,12 +238,7 @@ void  AuraArmVrep::trainingSOM(int size, std::string samplesFile){
     delete data;
 
 
-
-    
-
-
-
-    
 }
+
 
 

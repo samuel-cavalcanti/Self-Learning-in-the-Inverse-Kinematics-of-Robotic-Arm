@@ -24,15 +24,18 @@ Vdc::Vdc(std::string serverIP, int serverPort) {
 Vdc::~Vdc() {
 }
 
-void Vdc::conectpiece(std::string nameInVrep, int& nameInRemoteAPI) {
+bool Vdc::conectpiece(std::string nameInVrep, int& nameInRemoteAPI) {
 
     if (simxGetObjectHandle(clientID, (const simxChar*) nameInVrep.c_str(), (simxInt *) & nameInRemoteAPI, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok) {
         if (debug)
             std::cout << nameInVrep << " nao encontrado!" << std::endl;
-
+        nameInRemoteAPI = -1;
+        return false;
     } else {
         if (debug)
             std::cout << "Conectado ao " << nameInVrep << std::endl;
+
+        return true;
     }
 
 }
@@ -122,4 +125,97 @@ bool Vdc::readProximitySensor(int sensor, float &distance) {
     }
     return false;
 
+}
+
+int Vdc::getClientID() {
+    return clientID;
+}
+
+bool Vdc::getObjectPosition(int object, float& x, float& y, float& z) {
+
+    simxFloat position[3];
+    
+    int ok = simxGetObjectPosition(clientID, object, -1, position, simx_opmode_streaming);
+
+    while (ok == simx_return_novalue_flag) {
+
+        ok = simxGetObjectPosition(clientID, object, -1, position, simx_opmode_buffer);
+    }
+    
+    if ( ok !=simx_return_ok )
+        return false;
+    
+    x = (float) position[0];
+    y = (float) position[1];
+    z = (float) position[2];
+    
+    return true;
+
+    //std::cout << "x: " << x << " y: " << y << " z: " << z << std::endl;
+
+}
+
+void Vdc::debugerOfReturns(int simxreturn) {
+
+    switch (simxreturn) {
+        case simx_return_novalue_flag:
+            std::cout << "erro 1" << std::endl;
+            break;
+
+        case simx_return_timeout_flag:
+            std::cout << "erro 2" << std::endl;
+            break;
+
+        case simx_return_illegal_opmode_flag:
+            std::cout << "erro 3" << std::endl;
+            break;
+
+        case simx_return_remote_error_flag:
+            std::cout << "erro 4" << std::endl;
+            break;
+
+        case simx_return_split_progress_flag:
+            std::cout << "erro 5" << std::endl;
+            break;
+
+        case simx_return_local_error_flag:
+            std::cout << "erro 6" << std::endl;
+            break;
+
+        case simx_return_initialize_error_flag:
+            std::cout << "erro 7 " << std::endl;
+            break;
+    }
+
+    //          simx_return_ok				=0x000000,
+    //		simx_return_novalue_flag		=0x000001,		/* input buffer doesn't contain the specified command. Maybe you forgot to enable data streaming, or streaming hasn't started yet */
+    //		simx_return_timeout_flag		=0x000002,		/* command reply not received in time for simx_opmode_oneshot_wait operation mode */
+    //		simx_return_illegal_opmode_flag		=0x000004,		/* command doesn't support the specified operation mode */
+    //		simx_return_remote_error_flag		=0x000008,		/* command caused an error on the server side */
+    //		simx_return_split_progress_flag		=0x000010,		/* previous similar command not yet fully processed (applies to simx_opmode_oneshot_split operation modes) */
+    //		simx_return_local_error_flag		=0x000020,		/* command caused an error on the client side */
+    //		simx_return_initialize_error_flag	=0x000040	
+
+
+}
+
+void Vdc::setObjectPosition(int object, float x, float y, float z){
+    const simxFloat position[3] = {x,y,z};
+    simxSetObjectPosition(clientID,object ,-1,position,simx_opmode_oneshot);    
+}
+
+bool Vdc::getJointPosition(int joint, float& position){
+    
+    int ok =  simxGetJointPosition(clientID, joint, &position, simx_opmode_streaming);
+    
+    while (ok == simx_return_novalue_flag) {
+
+        ok =  simxGetJointPosition(clientID, joint, &position, simx_opmode_streaming);
+    }
+    if ( ok != simx_return_ok )
+        return false;
+    
+    return true;
+    
+    
 }
