@@ -28,4 +28,4 @@ run aplication cppremoteapi
 [samuel@ArchLinux RemoteAPI/build]$ ./cppremoteapi 
 ```
 
-see the paper [Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm](paper.html)
+see the paper [Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm](paper.md)
