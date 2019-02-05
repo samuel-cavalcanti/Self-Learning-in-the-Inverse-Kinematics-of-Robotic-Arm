@@ -343,8 +343,8 @@ in the task of pick-and place objects and in the investigation
 of strategies of learning by demonstration.
 
 *_REFERENCES_*
-<footer id="ref1"></footer>
-[1] B. D. Argall, S. Chernova, M. Veloso, and B. Browning, “A survey
+
+<a name="ref1"></a>[1] B. D. Argall, S. Chernova, M. Veloso, and B. Browning, “A survey
 of robot learning from demonstration,”Robotics and Autonomous
 Systems, vol. 57, no. 5, pp. 469–483, May 2009.
 
