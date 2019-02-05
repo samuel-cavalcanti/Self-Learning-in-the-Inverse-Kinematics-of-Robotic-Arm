@@ -228,14 +228,20 @@ information (desired alpha and gamma)
 Fig. 1. AURA Robotic Arm.
 
 <img id="fig2" src="Pictures/betaeGamma.png" width="354" height="300">
+
+Fig. 2. Beta and Gamma joints.
+
 <img id="fig3" src="Pictures/alpha.png" width="354" height="300">
 
-Fig. 2. Beta and Gamma joints. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig. 3. Alpha joint.
+Fig. 3. Alpha joint.
 
 <img id="fig4" src="Pictures/TVA_0.png" width="354" height="300">
+
+Fig. 4. Arm before neural network control signal.
+
 <img id="fig5" src="Pictures/TVA_1.png" width="354" height="300">
 
-Fig. 4. Arm before neural network control signal. Fig. 5. Arm after neural network control signal.
+Fig. 5. Arm after neural network control signal.
 
 ### A. LINE
 
