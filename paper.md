@@ -348,60 +348,60 @@ of strategies of learning by demonstration.
 of robot learning from demonstration,”Robotics and Autonomous
 Systems, vol. 57, no. 5, pp. 469–483, May 2009.
 
-<footer id="ref2"></footer>
+<a name="ref2"></a>
 [2] E. A. Billing, “A formalism for learning from demonstration,”Journal
 of Behavioral Robotics, vol. 1, no. 1, pp. 1–13, 2010.
 
-<footer id="ref3"></footer>
+<a name="ref3"></a>
 [3] C. Paxton, G. D. Hager, L. Bascetta,et al., “An incremental approach
 to learning generalizable robot tasks from human demonstration,” in
 Robotics and Automation (ICRA), 2015 IEEE International Conference
 on. IEEE, 2015, pp. 5616–5621.
 
-<footer id="ref4"></footer>
+<a name="ref4"></a>
 [4] R. Cubek, W. Ertel, and G. Palm, “High-level learning from demons-
 tration with conceptual spaces and subspace clustering,” inRobotics
 and Automation (ICRA), 2015 IEEE International Conference on.
 IEEE, 2015, pp. 2592–2597.
 
-<footer id="ref5"></footer>
+<a name="ref5"></a>
 [5] T. Kohonen, “The self-organizing map,” Neurocomputing,
 vol. 21, no. 1-3, pp. 1 – 6, 1998. [Online]. Avai-
 lable: http://www.sciencedirect.com/science/article/B6V10-3V7S70G-
 1/2/fd7c0b562382d4fcd8d02759cca
 
-<footer id="ref6"></footer>
+<a name="ref6"></a>
 [6] J. Walter and H. Ritter, “Rapid learning with parametrized self-
 organizing maps,”Neurocomputing, vol. 12, no. 2, pp. 131–153, 1996.
 
-<footer id="ref7"></footer>
+<a name="ref7"></a>
 [7] S. Kumar, N. Patel, and L. Behera, “Visual motor control of a 7 dof
 robot manipulator using function decomposition and sub-clustering in
 configuration space,”Neural Processing Letters, vol. 28, no. 1, pp.
 17–33, 2008.
 
-<footer id="ref8"></footer>
+<a name="ref8"></a>
 [8] S. Kumar, P. P, A. Dutta, and L. Behera, “Visual motor control of
 a 7dof redundant manipulator using redundancy preserving learning
 network,”Robotica, vol. 28, pp. 795–810, 2010.
 
-<footer id="ref9"></footer>
+<a name="ref9"></a>
 [9] M. Huser and J. Zhang, “Visual programming by demonstration ̈
 of grasping skills in the context of a mobile service robot using
 1d-topology based self-organizing-maps,”Robotics and Autonomous
 Systems, vol. 60, no. 3, pp. 463–472, 2012.
 
-<footer id="ref10"></footer>
+<a name="ref10"></a>
 [10] T. Zhou, P. Dudek, and B. E. Shi, “Self-organizing neural population
 coding for improving robotic visuomotor coordination,” inNeural
 Networks (IJCNN), The 2011 International Joint Conference on.
 IEEE, 2011, pp. 1437–1444.
 
-<footer id="ref11"></footer>
+<a name="ref11"></a>
 [11] T. Kohonen, “Self-organized formation of topologically correct feature
 maps,”Biological Cybernetics, vol. 43, pp. 59–69, 1982.
 
-<footer id="ref12"></footer>
+<a name="ref12"></a>
 [12] T. Kohonen and R. Hari, “Where the abstract feature maps of the
 brain might come from,”Trends in Neurosciences, vol. 22, pp. 135–
 139, 1999.
