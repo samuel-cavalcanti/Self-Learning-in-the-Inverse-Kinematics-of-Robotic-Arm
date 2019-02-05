@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>paper</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/samuel/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.11/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export" >
+      <div class="mume markdown-preview   "  >
+      <html><head></head><body><h1 class="mume-header" id="self-learning-in-the-inverse-kinematics-of-robotic-arm">Self-Learning  in the Inverse Kinematics of Robotic Arm</h1>
+
+<p><strong><em>Samuel Cavalcanti  and Orivaldo Santana</em></strong></p>
+<h2 class="mume-header" id="abstract">Abstract</h2>
+
+<p>This work is situated in application of techniques of machine learning for the pick and place tasks. The purpose of this study is to evaluate the Map of Kohonen in its process of learning and association of vision data with control data of a robotic arm. For this, two scenarios were made, in both of them the arm moves randomly. In first scenario, only control data of a line movement was captured. In the second, it was captured control data that allows the arm moves in a plan. After training the neural networking with the vision and control data. The SOM with 5184 nodes has Average MSE 0,00242445 for movement in line  and 0,00630577 in plane. The results indicate that Kohonen&apos;s map has the capacity of learning the control data and position the arm from a visual stimulus  in both scenarios.</p>
+<h2 class="mume-header" id="i-introduction">I. INTRODUCTION</h2>
+
+<p>The work presented in this article is related to the pro-<br>
+blem of teaching an articulated robot to perform a pick-and<br>
+place task. In order to solve this type of problem, machine<br>
+learning techniques are usually used in combination with<br>
+Learning by Demonstration (LbD). In this type of approach<br>
+the robot learns to perform a task from actions performed<br>
+by a demonstrator agent, a human being or a robot. There<br>
+are many ways to demonstrate behavior for a robot, for<br>
+example, by using a sequence of captured sensor data on<br>
+the demonstrator agent or a video with the demonstrator<br>
+agent [<a href="#ref1">1</a>], [<a href="#ref2">2</a>]. Recent examples of application of LbD in<br>
+pick-and place task can be found in [<a href="#ref3">3</a>] that proposed a<br>
+method based on Dynamic Movement Primitives (DMPs),<br>
+and [<a href="#ref4">4</a>] that proposed a method based Gaussian Mixture<br>
+Model (GMM) and Gaussian Mixture Regression (GMR).<br>
+The objective of this work is to investigate solutions for<br>
+LbD in activities involving a vision system and a movement<br>
+control system of an articulated robot focused on the task of<br>
+pick-and place objects. This article going to deal only with<br>
+the learning process of positioning a robotic arm. Therefore,<br>
+it uses visual information and data about the positioning<br>
+control of this arm.<br>
+To contextualize, the solution investigated involves: (i)<br>
+position control of robotic arm based on vision; (ii) trajectory<br>
+construction with the end effector at a starting point to a<br>
+target position of the object location; (iii) to pick up, to<br>
+transport and finally to place the object. This article will deal<br>
+only with position control (i). This article going to deal only<br>
+with position control, stage (i). Therefore, an unsupervised<br>
+machine learning technique will be used. A classic way<br>
+to solve the positioning of the end effector of a robotic<br>
+arm is through inverse kinematics. However, when using an<br>
+unsupervised technique with a vision system, two advantages<br>
+arise: 1 - it is not necessary to create a mathematical model<br>
+for each type of arm, but only a new training of the learning<br>
+system; 2 - It is not necessary to make a transformation<br>
+between the real space (Cartesian plane of the robot) to the<br>
+space of vision (visual signals), because this transformation<br>
+is embedded in the training data. The machine learning<br>
+technique chosen initially is the classic model called Self-<br>
+Organizing Map (SOM) [<a href="#ref5">5</a>].</p>
+<p>The validation of the proposed approach was performed<br>
+in two scenarios: a simpler scenario with data distributed<br>
+in a straight line; And a more elaborate scenario with data<br>
+distributed in a plane. New tests should be evaluated, such<br>
+as learning motion in a 3D space from a stereo camera.<br>
+This article is organized as follows, some related works<br>
+are presented in the Section II. The proposed approach to<br>
+address the learning problem of robotic arm positioning is<br>
+discussed in Section III. The validation experiments of the<br>
+approach are described in Section IV. The conclusion is in<br>
+Section V.</p>
+<h2 class="mume-header" id="ii-related-works">II. RELATED WORKS</h2>
+
+<p>This Section presents some models of unsupervised lear-<br>
+ning applied to the control problem of a robotic arm, mainly<br>
+models based on Kohonen maps. Some papers discuss how<br>
+the visual system is used in the process of control of arm<br>
+movement. The Parametrized Self-Organizing Map (PSOM),<br>
+for example, presents a classic approach to training a robotic<br>
+arm with visual information to perform moves in a 3D space.<br>
+This model has as main characteristic the learning with few<br>
+samples of training. The basic idea of a PSOM is to build<br>
+a map manifold from a restricted amount of basis manifolds<br>
+[<a href="#ref6">6</a>]. A disadvantage of this model is the need for prior<br>
+knowledge of training data.<br>
+For the control of manipulator robots in the task of picking<br>
+up and placing Kumar et al. [<a href="#ref7">7</a>], [<a href="#ref8">8</a>] proposed a system<br>
+based on the SOM neural network. The robot presented in<br>
+this work has 7 degrees of freedom. The positioner of the<br>
+effector is captured by a stereo system of cameras returning<br>
+four coordinates, two for each camera. The control system<br>
+learns to map the four coordinates of the cameras into a six-<br>
+dimensional vector containing the angular positions of the<br>
+joints of the robotic manipulator. Thus, an adapted SOM with<br>
+organized three-dimensional topological structure is used to<br>
+learn such a mapping so that each network node maps the<br>
+inverse kinematics of the manipulator to the imagens of the<br>
+cameras. A relevant point of this work is the encoding of<br>
+neurons with visual and control information.<br>
+Huser et al. presents a demonstration-based approach to<br>
+teach a robotic system with an arm a task of picking objects<br>
+[<a href="#ref9">9</a>]. In this approach, the demonstrator agent through a<br>
+stereoscopic camera takes objects with his hand. To perform<br>
+the tracking of the hand of the demonstrator, some image<br>
+processing techniques are used to segment the hand and<br>
+find its contour. This hand data is processed and the hand<br>
+coordinate in a 3D space is used to train a SOM of a<br>
+dimension that creates a generalization of this input data.<br>
+Thus, the 1D topology SOM network learns the trajectory of<br>
+hand movement of the demonstrator to control the robotic<br>
+hand. This work shows that the SOM can be applied in tasks<br>
+more complex than the learning of inverse kinematics.<br>
+The work of Zhou et al. [<a href="#ref10">10</a>] shows that it is possible to<br>
+apply models based on the Kohonen map for the autonomous<br>
+learning of the control of movement of a robotic arm in<br>
+a visual-motor system. The learning process occurs with a<br>
+camera aimed at the random motion of a robotic arm. The<br>
+visual system is enabled with tilting and rotating actions<br>
+similar to human head movement.</p>
+<h2 class="mume-header" id="iii-self-learning-to-control-robotic-arm">III. SELF-LEARNING TO CONTROL ROBOTIC ARM</h2>
+
+<p>The approach discussed in this work consists in applying<br>
+machine learning methods to relate sensory data with control<br>
+data in a robot with a vision system and an articulated<br>
+member. The learning process must occur independently and<br>
+the robot must learn alone to relate visual positions with<br>
+control signals of the actuators. After training and from a<br>
+visual stimulus, the articulated robot member should reach<br>
+any feasible visual region.<br>
+The first step in the learning process is to collect data.<br>
+In this stage, the robotic arm performs several movements<br>
+to reach as many points as possible in its field of view. At<br>
+each new point reached a sample is collected and stored in<br>
+a data set. Each sample contains visual information (effector<br>
+position, for example) and arm control information (joint<br>
+angles, for example).<br>
+The learning algorithm has the role of relating a point of<br>
+the field of view to a control signal that makes the robotic<br>
+arm effector reach this point. In this work, the first algorithm<br>
+chosen to investigate this learning process was the classical<br>
+neural network of unsupervised learning, the Kohonen Map<br>
+or the Self-Organizing Map (SOM). This algorithm has<br>
+characteristics that are relevant to the autonomous learning<br>
+process, such as the ability to learn by itself and to self-<br>
+organize the data. With the SOM, the robotic arm can make<br>
+random movements to obtain data with visual and control<br>
+information, and learn to make a relation between visual<br>
+signal and control signal. A collection of many data is<br>
+easily self-organized in its topological structure. Thus, a large<br>
+amount of data can be presented to the neural network, but<br>
+the neural network has the ability to compress this data and<br>
+store in its neurons the most representative samples of all<br>
+input data.<br>
+To use the trained system, simply present a point of<br>
+interest in the image that the learning algorithm will be able<br>
+to retrieve the control information to reach this point. For<br>
+SOM to relate visual information with control commands,<br>
+it is necessary to perform a search for the neuron that best<br>
+represents the desired visual information. Thus, the classic<br>
+SOM search strategy was changed to allow only a part of<br>
+the neuron encoding (part related to visual information).<br>
+Thus, the classical SOM search strategy was changed to<br>
+allow computing only part of the neuron weights (part<br>
+related to visual information). After finding neuron that best<br>
+represents this visual information, automatically the control<br>
+signal encoded in this neuron is extracted and used to move<br>
+the arm. At the end of this process, the robotic arm effector<br>
+is positioned at the desired visual point.</p>
+<h3 class="mume-header" id="a-self-organizing-map">A. SELF-ORGANIZING MAP</h3>
+
+<p>A SOM (Self-Organizing Map) is a tool that organizes and<br>
+maps high-dimensional data into a regular low-level lattice.<br>
+Being able to compress information without losing important<br>
+topological and metric relationships of the original data [<a href="#5">5</a>].<br>
+The SOM (Self-Organizing Map) were developed by<br>
+Teuvo Kohonen in the 1980s inspired by the topological<br>
+map of the animal cerebral cortex. It has been observed that</p>
+<p>in more complex animals the different areas of the brain<br>
+contain subareas that are responsible for mapping a certain<br>
+sensory organ. It is known that these neurons in the cortex<br>
+are spatially organized, in which the topologically close ones<br>
+tend to respond to similar stimuli [<a href="#ref11">11</a>].<br>
+The SOM network has two layers, input and output. The<br>
+input is where the data is presented to the neural network. In<br>
+the output competition occurs between the neurons to find<br>
+the best-match unit neuron. Usually the Euclidean distance<br>
+between the sample vector and the weight vector of each<br>
+neuron is calculated, after weight of the best-match unit is<br>
+modified to be more similar to the input sample. The weight<br>
+of neighbors neurons are modified like the best-match unit,<br>
+but with a intensity take into account the the distance to the<br>
+best-match unit in the SOM lattice. As samples are presented<br>
+to the network, it organizes itself so that similar samples are<br>
+located in the same region [<a href="#ref12">12</a>].<br>
+The SOM training can be divided into two phases: in<br>
+the first phase, the neurons are initially randomly oriented<br>
+(weights with random values, but preferably all very close),<br>
+the learning rate is high, and occurs the discovery of the<br>
+clusters that it must map. In the second phase, the learning<br>
+rate must be low, the neighborhood radius involves one or no<br>
+neighbor, there is the sophistication of the map, improving<br>
+the grouping performed [<a href="#ref5">5</a>].</p>
+<h2 class="mume-header" id="iv-experiments">IV. EXPERIMENTS</h2>
+
+<p>The objective of this Section is to evaluate an unsupervised<br>
+algorithm to learn a mapping between sensory data and<br>
+control data in a robotic arm with a vision system. The<br>
+experiments were made with a simulator, a system for data<br>
+capture and an adapted SOM. To measure the performance<br>
+of the artificial neural network, a visual and a system output<br>
+evaluation was made. The experiments were done in two<br>
+setups: one the robotic arm end effector moving in one<br>
+dimension and another the robotic arm end effector moving<br>
+in two dimensions.<br>
+The experiments were performed with an simulated<br>
+<a href="https://www.thingiverse.com/thing:225513">AURA robotic arm</a> composed basically with 3 parts, see<br>
+Figure <a href="#fig1">1</a>. The arm base gives support to the others parts. The<br>
+arm can be divided into two links: A and B, with link A with<br>
+Fig. 5. Arm after neural network control signal.<br>
+14 centimeters and B with 12 centimeters. The movement<br>
+of the AURA is determined by the positions of the three<br>
+joints: alpha, beta and gamma, Figures <a href="#fig3">3</a> and <a href="#fig2">2</a>. In every<br>
+experiment the alpha angle was configured to a fixed value.<br>
+The vision sensor is positioning on the side of the robot. The<br>
+Figure <a href="#fig2">2</a> contains a image of the vision sensor output. Thus,<br>
+each sample contains visual information (x, y) and control<br>
+information (desired alpha and gamma)</p>
+<img id="fig1" src="file:////home/samuel/Documents/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/Pictures/robotic_arm.png">
+<p>Fig. 1. AURA Robotic Arm.</p>
+<img id="fig2" src="file:////home/samuel/Documents/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/Pictures/betaeGamma.png" width="354" height="300">
+<p>Fig. 2. Beta and Gamma joints.</p>
+<img id="fig3" src="file:////home/samuel/Documents/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/Pictures/alpha.png" width="354" height="300">
+<p>Fig. 3. Alpha joint.</p>
+<img id="fig4" src="file:////home/samuel/Documents/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/Pictures/TVA_0.png" width="354" height="300">
+<p>Fig. 4. Arm before neural network control signal.</p>
+<img id="fig5" src="file:////home/samuel/Documents/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/Pictures/TVA_1.png" width="354" height="300">
+<p>Fig. 5. Arm after neural network control signal.</p>
+<h3 class="mume-header" id="a-line">A. LINE</h3>
+
+<p>In this scenario the control information was collected with<br>
+the arm effector moving in a single dimension. A red ball<br>
+was associated with the end effector. The vision sensor was<br>
+configured to capture the mass center of the red ball and to<br>
+use relative coordinates, x and y position between 0 to 1. For<br>
+that, an algorithm makes the arm to realize random moves,<br>
+beta and gamma joint values between 0 and 180 degrees.<br>
+But, only values in a rectangular region ware selected. This<br>
+region was defined by a desired Y +/- 0.01 (height in the<br>
+image of the vision sensor, Figure <a href="#fig2">2</a>) and X has been the<br>
+entire image width.<br>
+After collecting 1700 samples for the training and 1700<br>
+for validation, the SOM neural network was trained with 3<br>
+sizes: 18x18 (324 neurons), 36x36 (1296 neurons) and 72x<br>
+(5,184 neurons). With the following settings: The learning<br>
+rate of 0.2, 10000 interactions and neighborhood radius equal<br>
+to 1.5.<br>
+The performance of the algorithm was evaluated with<br>
+the mean square error (MSE) between the desired output<br>
+and calculated output (the beta and gamma angles). This<br>
+experiment was executed 30 times, the MSE and the standard<br>
+deviation of the MSE were calculated.<br>
+Another way to check the approach performance was visu-<br>
+ally observe the desired position and the simulated position<br>
+of the end effector. For this, it was created an algorithm<br>
+that automatically presents aleatory targets positions to the<br>
+robotic arms. So, if the learning process has occurred with<br>
+success the output control commands of the SOM neural<br>
+network will make the end effector reach the red ball.</p>
+<h3 class="mume-header" id="b-plane">B. PLANE</h3>
+
+<p>The experiments in this scenario is similar to the previous,<br>
+but the samples is scattered in a plane rather than a straight<br>
+line. Now, points of interest are: positions where the point<br>
+on the y axis of the ball was greater than or equal to 0.29,<br>
+because below that the arm crossed the ground; Positions<br>
+in which the point on the x-axis was less than or equal<br>
+to 0.45, since it was observed in preliminary tests that the<br>
+network felt difficulties in learn points in the back region of<br>
+the arm. After the collection, was made the same procedure<br>
+as in the previous scenario, that is: the neural network was<br>
+trained with the same 3 sizes, the MSE was calculated and<br>
+the process was repeated 30 times and visually was verified<br>
+the accuracy of the network.<br>
+With the results of the Tables <a href="#table1">I</a>, <a href="#table2">II</a> and <a href="file:////home/samuel/Documents/Repositories/Self-Learning-in-the-Inverse-Kinematics-of-Robotic-Arm/(#table3)">III</a> the SOM<br>
+network was able to learn the movement of the robot in<br>
+plane with errors below 2 zeros. It is possible to note that<br>
+the error decreases as the network size increases, showing<br>
+the smaller error tendencies for larger networks. Also in its<br>
+visual verification we observed that the network can follow<br>
+the ball, see Figures <a href="#fig4">4</a> and <a href="#fig5">5</a>.</p>
+<h4 class="mume-header" id="table-i-output-error-for-beta-joint-and-size-network-of-18-x-18">TABLE I OUTPUT ERROR FOR BETA JOINT AND SIZE NETWORK OF 18 X 18</h4>
+
+<footer id="table1"></footer>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Average MSE Standard deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Line</td>
+<td>0,00526680</td>
+</tr>
+<tr>
+<td>Plane</td>
+<td>0,02460880</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="table-ii-output-error-for-beta-joint-and-size-network-of-36-x-36">TABLE II OUTPUT ERROR FOR BETA JOINT AND SIZE NETWORK OF 36 X 36</h4>
+
+<footer id="table2"></footer>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Average MSE Standard deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Line</td>
+<td>0,00325760</td>
+</tr>
+<tr>
+<td>Plane</td>
+<td>0,01014820</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="table-iii-output-error-for-beta-joint-and-size-network-of-72-x-72">TABLE III OUTPUT ERROR FOR BETA JOINT AND SIZE NETWORK OF 72 X 72</h4>
+
+<footer id="table3"></footer>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Average MSE Standard deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Line</td>
+<td>0,002424450</td>
+</tr>
+<tr>
+<td>Plane</td>
+<td>0,006305770</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="v-conclusion">V. CONCLUSION</h2>
+
+<p>This work presented a solution to the learning problem<br>
+of positioning a robotic arm. This solution is embedded<br>
+in a larger problem that is to make an articulated robot<br>
+with a vision system learn how to manipulate objects. The<br>
+task taken as reference is to take and place object. Thus,<br>
+the solution presented in this paper solves a part of this<br>
+larger problem. With the results obtained in Section ref sec:<br>
+experiments it is possible to conclude that for the evaluated<br>
+scenarios the proposed approach is able to position the arm<br>
+near the object. In this way, allowing future work to advance<br>
+in the task of pick-and place objects and in the investigation<br>
+of strategies of learning by demonstration.</p>
+<p><em><em>REFERENCES</em></em></p>
+<footer id="ref1"></footer>
+[1] B. D. Argall, S. Chernova, M. Veloso, and B. Browning, &#x201C;A survey
+of robot learning from demonstration,&#x201D;Robotics and Autonomous
+Systems, vol. 57, no. 5, pp. 469&#x2013;483, May 2009.
+<footer id="ref2"></footer>
+[2] E. A. Billing, &#x201C;A formalism for learning from demonstration,&#x201D;Journal
+of Behavioral Robotics, vol. 1, no. 1, pp. 1&#x2013;13, 2010.
+<footer id="ref3"></footer>
+[3] C. Paxton, G. D. Hager, L. Bascetta,et al., &#x201C;An incremental approach
+to learning generalizable robot tasks from human demonstration,&#x201D; in
+Robotics and Automation (ICRA), 2015 IEEE International Conference
+on. IEEE, 2015, pp. 5616&#x2013;5621.
+<footer id="ref4"></footer>
+[4] R. Cubek, W. Ertel, and G. Palm, &#x201C;High-level learning from demons-
+tration with conceptual spaces and subspace clustering,&#x201D; inRobotics
+and Automation (ICRA), 2015 IEEE International Conference on.
+IEEE, 2015, pp. 2592&#x2013;2597.
+<footer id="ref5"></footer>
+[5] T. Kohonen, &#x201C;The self-organizing map,&#x201D; Neurocomputing,
+vol. 21, no. 1-3, pp. 1 &#x2013; 6, 1998. [Online]. Avai-
+lable: http://www.sciencedirect.com/science/article/B6V10-3V7S70G-
+1/2/fd7c0b562382d4fcd8d02759cca
+<footer id="ref6"></footer>
+[6] J. Walter and H. Ritter, &#x201C;Rapid learning with parametrized self-
+organizing maps,&#x201D;Neurocomputing, vol. 12, no. 2, pp. 131&#x2013;153, 1996.
+<footer id="ref7"></footer>
+[7] S. Kumar, N. Patel, and L. Behera, &#x201C;Visual motor control of a 7 dof
+robot manipulator using function decomposition and sub-clustering in
+configuration space,&#x201D;Neural Processing Letters, vol. 28, no. 1, pp.
+17&#x2013;33, 2008.
+<footer id="ref8"></footer>
+[8] S. Kumar, P. P, A. Dutta, and L. Behera, &#x201C;Visual motor control of
+a 7dof redundant manipulator using redundancy preserving learning
+network,&#x201D;Robotica, vol. 28, pp. 795&#x2013;810, 2010.
+<footer id="ref9"></footer>
+[9] M. Huser and J. Zhang, &#x201C;Visual programming by demonstration &#x308;
+of grasping skills in the context of a mobile service robot using
+1d-topology based self-organizing-maps,&#x201D;Robotics and Autonomous
+Systems, vol. 60, no. 3, pp. 463&#x2013;472, 2012.
+<footer id="ref10"></footer>
+[10] T. Zhou, P. Dudek, and B. E. Shi, &#x201C;Self-organizing neural population
+coding for improving robotic visuomotor coordination,&#x201D; inNeural
+Networks (IJCNN), The 2011 International Joint Conference on.
+IEEE, 2011, pp. 1437&#x2013;1444.
+<footer id="ref11"></footer>
+[11] T. Kohonen, &#x201C;Self-organized formation of topologically correct feature
+maps,&#x201D;Biological Cybernetics, vol. 43, pp. 59&#x2013;69, 1982.
+<footer id="ref12"></footer>
+[12] T. Kohonen and R. Hari, &#x201C;Where the abstract feature maps of the
+brain might come from,&#x201D;Trends in Neurosciences, vol. 22, pp. 135&#x2013;
+139, 1999.
+</body></html>
+      </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+    
+    
+  </html>

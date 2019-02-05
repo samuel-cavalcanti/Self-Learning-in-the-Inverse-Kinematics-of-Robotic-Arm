@@ -18,10 +18,10 @@ by a demonstrator agent, a human being or a robot. There
 are many ways to demonstrate behavior for a robot, for
 example, by using a sequence of captured sensor data on
 the demonstrator agent or a video with the demonstrator
-agent [[1](#1)], [[2](#2)]. Recent examples of application of LbD in
-pick-and place task can be found in [[3](#3)] that proposed a
+agent [[1](#ref1)], [[2](#ref2)]. Recent examples of application of LbD in
+pick-and place task can be found in [[3](#ref3)] that proposed a
 method based on Dynamic Movement Primitives (DMPs),
-and [[4](#4)] that proposed a method based Gaussian Mixture
+and [[4](#ref4)] that proposed a method based Gaussian Mixture
 Model (GMM) and Gaussian Mixture Regression (GMR).
 The objective of this work is to investigate solutions for
 LbD in activities involving a vision system and a movement
@@ -48,7 +48,7 @@ between the real space (Cartesian plane of the robot) to the
 space of vision (visual signals), because this transformation
 is embedded in the training data. The machine learning
 technique chosen initially is the classic model called Self-
-Organizing Map (SOM) [[5](#5)].
+Organizing Map (SOM) [[5](#ref5)].
 
 The validation of the proposed approach was performed
 in two scenarios: a simpler scenario with data distributed
@@ -74,10 +74,10 @@ arm with visual information to perform moves in a 3D space.
 This model has as main characteristic the learning with few
 samples of training. The basic idea of a PSOM is to build
 a map manifold from a restricted amount of basis manifolds
-[[6](#6)]. A disadvantage of this model is the need for prior
+[[6](#ref6)]. A disadvantage of this model is the need for prior
 knowledge of training data.
 For the control of manipulator robots in the task of picking
-up and placing Kumar et al. [[7](#7)], [[8](#8)] proposed a system
+up and placing Kumar et al. [[7](#ref7)], [[8](#ref8)] proposed a system
 based on the SOM neural network. The robot presented in
 this work has 7 degrees of freedom. The positioner of the
 effector is captured by a stereo system of cameras returning
@@ -92,7 +92,7 @@ cameras. A relevant point of this work is the encoding of
 neurons with visual and control information.
 Huser et al. presents a demonstration-based approach to
 teach a robotic system with an arm a task of picking objects
-[[9](#9)]. In this approach, the demonstrator agent through a
+[[9](#ref9)]. In this approach, the demonstrator agent through a
 stereoscopic camera takes objects with his hand. To perform
 the tracking of the hand of the demonstrator, some image
 processing techniques are used to segment the hand and
@@ -103,7 +103,7 @@ Thus, the 1D topology SOM network learns the trajectory of
 hand movement of the demonstrator to control the robotic
 hand. This work shows that the SOM can be applied in tasks
 more complex than the learning of inverse kinematics.
-The work of Zhou et al. [[10](#10)] shows that it is possible to
+The work of Zhou et al. [[10](#ref10)] shows that it is possible to
 apply models based on the Kohonen map for the autonomous
 learning of the control of movement of a robotic arm in
 a visual-motor system. The learning process occurs with a
@@ -175,7 +175,7 @@ in more complex animals the different areas of the brain
 contain subareas that are responsible for mapping a certain
 sensory organ. It is known that these neurons in the cortex
 are spatially organized, in which the topologically close ones
-tend to respond to similar stimuli [[11](#11)].
+tend to respond to similar stimuli [[11](#ref11)].
 The SOM network has two layers, input and output. The
 input is where the data is presented to the neural network. In
 the output competition occurs between the neurons to find
@@ -187,7 +187,7 @@ of neighbors neurons are modified like the best-match unit,
 but with a intensity take into account the the distance to the
 best-match unit in the SOM lattice. As samples are presented
 to the network, it organizes itself so that similar samples are
-located in the same region [[12](#12)].
+located in the same region [[12](#ref12)].
 The SOM training can be divided into two phases: in
 the first phase, the neurons are initially randomly oriented
 (weights with random values, but preferably all very close),
@@ -195,7 +195,7 @@ the learning rate is high, and occurs the discovery of the
 clusters that it must map. In the second phase, the learning
 rate must be low, the neighborhood radius involves one or no
 neighbor, there is the sophistication of the map, improving
-the grouping performed [[5](#5)].
+the grouping performed [[5](#ref5)].
 
 ## IV. EXPERIMENTS
 
@@ -343,65 +343,65 @@ in the task of pick-and place objects and in the investigation
 of strategies of learning by demonstration.
 
 *_REFERENCES_*
-<footer id="1"></footer>
+<footer id="ref1"></footer>
 [1] B. D. Argall, S. Chernova, M. Veloso, and B. Browning, “A survey
 of robot learning from demonstration,”Robotics and Autonomous
 Systems, vol. 57, no. 5, pp. 469–483, May 2009.
 
-<footer id="2"></footer>
+<footer id="ref2"></footer>
 [2] E. A. Billing, “A formalism for learning from demonstration,”Journal
 of Behavioral Robotics, vol. 1, no. 1, pp. 1–13, 2010.
 
-<footer id="3"></footer>
+<footer id="ref3"></footer>
 [3] C. Paxton, G. D. Hager, L. Bascetta,et al., “An incremental approach
 to learning generalizable robot tasks from human demonstration,” in
 Robotics and Automation (ICRA), 2015 IEEE International Conference
 on. IEEE, 2015, pp. 5616–5621.
 
-<footer id="4"></footer>
+<footer id="ref4"></footer>
 [4] R. Cubek, W. Ertel, and G. Palm, “High-level learning from demons-
 tration with conceptual spaces and subspace clustering,” inRobotics
 and Automation (ICRA), 2015 IEEE International Conference on.
 IEEE, 2015, pp. 2592–2597.
 
-<footer id="5"></footer>
+<footer id="ref5"></footer>
 [5] T. Kohonen, “The self-organizing map,” Neurocomputing,
 vol. 21, no. 1-3, pp. 1 – 6, 1998. [Online]. Avai-
 lable: http://www.sciencedirect.com/science/article/B6V10-3V7S70G-
 1/2/fd7c0b562382d4fcd8d02759cca
 
-<footer id="6"></footer>
+<footer id="ref6"></footer>
 [6] J. Walter and H. Ritter, “Rapid learning with parametrized self-
 organizing maps,”Neurocomputing, vol. 12, no. 2, pp. 131–153, 1996.
 
-<footer id="7"></footer>
+<footer id="ref7"></footer>
 [7] S. Kumar, N. Patel, and L. Behera, “Visual motor control of a 7 dof
 robot manipulator using function decomposition and sub-clustering in
 configuration space,”Neural Processing Letters, vol. 28, no. 1, pp.
 17–33, 2008.
 
-<footer id="8"></footer>
+<footer id="ref8"></footer>
 [8] S. Kumar, P. P, A. Dutta, and L. Behera, “Visual motor control of
 a 7dof redundant manipulator using redundancy preserving learning
 network,”Robotica, vol. 28, pp. 795–810, 2010.
 
-<footer id="9"></footer>
+<footer id="ref9"></footer>
 [9] M. Huser and J. Zhang, “Visual programming by demonstration ̈
 of grasping skills in the context of a mobile service robot using
 1d-topology based self-organizing-maps,”Robotics and Autonomous
 Systems, vol. 60, no. 3, pp. 463–472, 2012.
 
-<footer id="10"></footer>
+<footer id="ref10"></footer>
 [10] T. Zhou, P. Dudek, and B. E. Shi, “Self-organizing neural population
 coding for improving robotic visuomotor coordination,” inNeural
 Networks (IJCNN), The 2011 International Joint Conference on.
 IEEE, 2011, pp. 1437–1444.
 
-<footer id="11"></footer>
+<footer id="ref11"></footer>
 [11] T. Kohonen, “Self-organized formation of topologically correct feature
 maps,”Biological Cybernetics, vol. 43, pp. 59–69, 1982.
 
-<footer id="12"></footer>
+<footer id="ref12"></footer>
 [12] T. Kohonen and R. Hari, “Where the abstract feature maps of the
 brain might come from,”Trends in Neurosciences, vol. 22, pp. 135–
 139, 1999.
